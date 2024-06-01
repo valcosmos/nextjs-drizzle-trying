@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  drizzel-demo:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: drizzel-demo
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+
+    ports:
+      - '5432:5432'
+
+    volumes:
+      - ./data:/var/lib/postgresql/data
